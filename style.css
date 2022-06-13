@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&family=Courgette&family=Permanent+Marker&family=Poppins:ital,wght@0,400;1,400;1,600&display=swap');
+*{
+    margin: 0;
+    top:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Comic Neue', cursive;
+font-family: 'Courgette', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Poppins', sans-serif;
+}
+
+
+/* navbar */
+.logo{
+height:100px;
+width:100px;
+opacity:0.5;
+background: rgba(255, 0, 0, 0.4);
+}
+.nav-menu{
+    padding:25px;
+}
+.menu{
+    font-size: 20px;
+    letter-spacing: 1px;
+    color:rgb(255,205,112);
+    transition: all .4s;
+}
+.menu:hover{
+    color:#634832;
+}
+
+.bar1,.bar2,.bar3{
+    width:23px;
+    height: 3px;
+    margin: 5px;
+    transition: all .4s;
+}
+
+.navbar-toggler{
+    outline: none !important;
+}
+
+/* header */
+header{
+    height:100vh;
+    background: url("https://i0.wp.com/eastwoodhill.org.nz/wp-content/uploads/2022/04/coffee01.png?fit=600%2C400&ssl=1")no-repeat center center/cover;
+}
+
+.banner{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50% );
+    width:80%;
+}
+
+.heading{
+    animation-name:slide;
+    animation-duration: 2s;
+    color:rgb(255,215,0)
+   
+}
+.main{
+    animation-name:slide;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+}
+@keyframes slide{
+    0%{
+        transform: translateX(-1000px);
+        opacity:0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* about us */
+#about{
+    background:#000;
+    margin-top: 30px;
+    color:#dcc1ac;
+}
+.text{
+    font-size: 28px;
+}
+
+.about-images{
+    position: relative;
+}
+.about-img{
+    position:absolute;
+    width:150px;
+    transition:all 2s ease;
+    opacity:0.9;
+}
+
+.img-1{
+    left:0%;
+    top:0%;
+}
+.img-2{
+    left:20%;
+    top:20%;
+    z-index:10;
+}
+
+.img-3{
+    left:40%;
+    top:45%;
+    z-index:20;
+}
+.img-4{
+    left:40%;
+    top:0%;
+}
+.img-5{
+    left:0%;
+    top:45%;
+}
+.about-img:hover{
+    outline:10px solid #dbc1ac;
+    outline-offset: 32px;
+    transform:scale(1.3)rotate(20deg);
+    z-index: 30;
+    opacity:1;
+}
+.about-images:hover,
+.about-img:not(:hover){
+    opacity: 0.6;
+}
+
+.btn{
+    color:#c25706;
+    font-weight:bold ;
+    border:3px solid #634832;
+    font-size: 25px;
+}
+.btn:hover{
+    background: #dbc1ac;
+}
+.hvr-right{
+    display:inline-block;
+    vertical-align: middle;
+    transition-duration: 0.5s;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0,0,0);
+    position: relative;
+    transition-property: color;
+}
+.hvr-right::before{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #dbc1ac;
+    transition-timing-function:ease-out;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: trasform;
+    transition-duration: 0.5s;
+}
+.hvr-right:hover,.hvr-right:focus,
+.hvr-right:active{
+    color:#000;
+}
+.hvr-right:hover::before, .hvr-right:focus::before,
+.hvr-right:active::before{
+    transition-timing-function: cubic-bezier(0.52,1.64,0.37,0.66);
+    transform: scaleX(1);
+}
+
+/* gallery */
+.gallery .row{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(25%,1fr));
+    gap:1rem;
+    margin:2.5rem auto;
+    width:90%;
+}
+.gallery .row .box{
+    position: relative;
+    height: 20rem;
+    overflow: hidden;
+}
+.gallery .row .box:hover{
+    box-shadow: var(--box-shadow);
+    border:0.1rem solid var(--mincolor);
+}
+.gallery .row .box img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.gallery .row .box:hover img{
+    transform: translateY(-100%);
+}
+.gallery .row .box:hover .content{
+    transform: translateY(0);
+}
+.gallery .row .box .content{
+    position: absolute;
+    top:0;
+    left: 0;
+    background: rgb(201,201,201);
+    text-align: center;
+    padding:2rem;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    /* padding-top: 2.5rem; */
+}
+.gallery .row .box .content h3{
+   font-size: 2rem;
+   color:#000
+}
+.gallery .row .box .content p{
+    padding:1rem 0;
+    font-size: 1.8rem;
+    line-height: 1;
+    color:var(--mincolor);
+    margin-bottom: 0;
+    color:#000;
+}
+/* table */
+.p-5{
+    background: rgb(255,248,231) ;
+}
+.coffee-card{
+    position: relative;
+    box-shadow: 5px 15px 50px #634832;
+    max-width: 420px;
+    transition:all .8s;
+    overflow: hidden;
+    cursor: pointer;
+}
+.card-header .title-text{
+    color:#000;
+}
+.rotate{
+    perspective: 100rem;
+}
+.back{
+    position: absolute;
+    top:-100%;
+    background:#fff;
+    height: 100%;
+    width: 100%;
+    opacity:0;
+    user-select: none;
+    pointer-events: none;
+    transform: rotateY(180deg);
+    transition: top .8s opacity .4s;
+
+}
+.text-color{
+    color: #634832;
+}
+.back-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.rotate:hover .coffee-card{
+    transform: rotateY(180deg);
+}
+.rotate:hover .back{
+    opacity: 1;
+    top:0;
+    user-select: auto;
+    pointer-events: auto;
+}
+.back-content .btn{
+    color: #000;
+}
+footer{
+    background: #000;
+    padding-top: 2%;
+    margin-top: 15px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+   
+}
+
+p{
+    margin-bottom: 5px;
+}
+
+
+
