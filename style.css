@@ -83,8 +83,9 @@ header{
 /* about us */
 #about{
     background:#000;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     color:#dcc1ac;
+    font-family: 'Comic Neue', cursive;
 }
 .text{
     font-size: 28px;
@@ -144,6 +145,42 @@ header{
 .btn:hover{
     background: #dbc1ac;
 }
+.btton{
+    /* text-align: center; */
+    width:250px;
+    height:50px;
+    display:inline-block;
+    color:rgb(255,205,112);
+    font-weight:bold ;
+    border-radius:8px;
+    font-size: 20px;
+    background:#44240a;
+    padding-top:15px;
+    padding-bottom: 15px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.btton:hover{
+    background: #dbc1ac;
+}
+   .bttn{
+        /* font-family: 'Comic Neue', cursive; */
+       
+        width:250px;
+        height:50px;
+        display:inline-block;
+        border-radius:8px;
+        color:#44240a;
+        font-weight:900 ;
+         border:none;
+         font-size: 20px;
+        background: rgb(255,205,112);
+        margin-top: 15px;
+        padding-top:15px;
+        padding-bottom: 15px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
 .hvr-right{
     display:inline-block;
     vertical-align: middle;
@@ -179,17 +216,21 @@ header{
 }
 
 /* gallery */
+
+    
 .gallery .row{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(25%,1fr));
     gap:1rem;
     margin:2.5rem auto;
     width:90%;
+    
 }
 .gallery .row .box{
     position: relative;
     height: 20rem;
     overflow: hidden;
+    
 }
 .gallery .row .box:hover{
     box-shadow: var(--box-shadow);
@@ -220,15 +261,18 @@ header{
 }
 .gallery .row .box .content h3{
    font-size: 2rem;
-   color:#000
+   color:#44240a;
+   font-family: 'Comic Neue', cursive;
+  
 }
 .gallery .row .box .content p{
     padding:1rem 0;
-    font-size: 1.8rem;
+    font-size: 15PX;
     line-height: 1;
     color:var(--mincolor);
     margin-bottom: 0;
     color:#000;
+    font-family: 'Comic Neue', cursive;
 }
 /* table */
 .p-5{
@@ -291,6 +335,7 @@ footer{
     color: #fff;
    
 }
+
 
 p{
     margin-bottom: 5px;

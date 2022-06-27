@@ -1,51 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="form_style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="form_style.css">
 </head>
+
 <body>
-    
-    <section class="book" id="book">
-        <h1 class="heading">Book Your Table</h1>
-        <form action="">
-            <input type="text" id="name" placeholder="your name" class="box">
-            <input type="email" id="email" placeholder="your email" class="box">
-            <input type="number" id="mob" placeholder="your number" class="box">
-            <input type="number" id="no" placeholder="no.of members" min="1" max="5" class="box">
-            <input type="datetime-local" id="time" placeholder="visiting time" class="box">
-            
-            <textarea name="" placeholder="your message" class="box" id="msg" cols="30" rows="10"></textarea>
-             <input type="submit" onclick="saveData()"id="bton" value="Book My Table" class="btn">
-             <!-- <a href="form_data.html">check details</a> -->
-        </form>
-    </section>
 
-      <div class="col-sm-12" id="info" hidden>
-        <h2 style="text-align: center;">Booking Details</h2>
-        <div class="row">
-           <div class="col-sm-2" style="padding:5px;background-color: rgb(177, 169, 169);"><h2>Name</h2></div>
-          <div class="col-sm-2" style="padding: 5px;background-color: rgb(177, 169, 169);"><h2>Email</h2></div>
-          <div class="col-sm-2" style="padding: 5px;background-color: rgb(177, 169, 169);"><h2>Mob</h2></div> 
-          <div class="col-sm-2"style="padding: 5px;background-color: rgb(177, 169, 169);"><h2>No</h2></div> 
-          <div class="col-sm-2"style="padding: 5px;background-color: rgb(177, 169, 169);"><h2>Time</h2></div> 
-          <div class="col-sm-2"style="padding: 5px;background-color: rgb(177, 169, 169);"><h2>Msg</h2></div> 
+  <!-- menu list -->
+  <section id="msection">
+    <div class="logo">
+      <button type="button" class="btn" id="modal-btn" data-toggle="modal" data-target="#exampleModalCenter">
+        <i style="font-size:40px;color: rgb(255,205,112);" class="fa">&#xf0f4;</i>
+      </button>
 
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+           <div class="modal-content" id="modalcontent">
+            <!-- <div class="modal-header" id="modalbody">-->
+              <!-- <h5 class="modal-title">Selected Items</h5> -->
+             <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body ">
+              <div class="row">
+              <div class="col-lg-6">
+                <img class="modal-img" src="https://slowthecookdown.com/wp-content/uploads/2021/06/chocolate-coffee-milkshake-10-500x500.jpg">
+                <h5 class="modal-title">Dalgona Coffee
+                <p class="mprice">Rs 80</p></h5>
+              </div>
+                <div class=col-3 id="count">
+                  <h5 class="mbtitle">Quantity</h5>
+                  <span class="minus">-</span>
+                  <span class="num">1</span>
+                  <span class="plus">+</span>
+                </div>
+              <div class="col-3" id="count">
+                <h5 class="mbtitle" id="totalprice">Rs 0</h5>
+              </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div> -->
+          </div> 
         </div>
-        <div id="showUsers"></div>
-    </div> 
+      </div>
+    </div>
+    <div class="heading">
+      <h1>Our Menu</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card w-50 col">
+          <div class="card-body row">
+            <div class="col-3"> <img class="img-fluid"
+                src="https://slowthecookdown.com/wp-content/uploads/2021/06/chocolate-coffee-milkshake-10-500x500.jpg">
+            </div>
+            <div class="col-6 pro">
+              <h5 class="card-title">Dalgona Coffee</h5>
+              <p class="card-text">With healthy ingredients</p>
+              <p class="price"> 80</p>
+            </div>
+            <div class="col-lg-3">
+              <button type="button" class="btn btn-order" id="c1">
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card w-50 col">
+          <div class="card-body row">
+            <div class="col-3"> <img class="img-fluid"
+                src="https://www.waterymouthcafe.co.nz/wp-content/uploads/2017/07/The-insiders-guide-to-great-coffee-from-the-baristas-at-Watery-Mouth-cafe-Blenheim1-500x500.jpg">
+            </div>
+            <div class="col-6">
+              <h5 class="card-title">Black Coffee</h5>
+              <p class="card-text">With healthy ingredients</p>
+              <p class="price">30</p>
+            </div>
+            <div class="col-lg-3">
+              <button type="button" class="btn btn-order" id="c2">
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card w-50 col">
+          <div class="card-body row">
+            <div class="col-3"> <img class="img-fluid"
+                src="https://detoxinista.com/wp-content/uploads/2018/06/coffee-smoothie-1-500x500.jpg"></div>
+            <div class="col-6">
+              <h5 class="card-title">Thick Coffee</h5>
+              <p class="card-text">With healthy ingredients</p>
+              <p class="price">50</p>
+            </div>
+            <div class="col-lg-3">
+              <button type="button" class="btn btn-order" data-toggle="modal" id="c3">
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card w-50 col">
+          <div class="card-body row">
+            <div class="col-3"> <img class="img-fluid"
+                src="https://www.newlifeonahomestead.com/wp-content/uploads/2019/03/affagato-coffee-500x500.jpg"></div>
+
+            <div class="col-6">
+              <h5 class="card-title">Cold Coffee</h5>
+              <p class="card-text">With healthy ingredients</p>
+              <p class="price">60</p>
+            </div>
+
+            <div class="col-lg-3">
+              <button type="button" class="btn btn-order" data-toggle="modal" id="c4">
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card w-50 col">
+          <div class="card-body row">
+            <div class="col-3"> <img class="img-fluid"
+                src="https://www.chockfullonuts.com/wp-content/uploads/2020/04/iced_coffee_visual_500x500.jpg"></div>
+            <div class="col-6">
+              <h5 class="card-title">Coffee Shake</h5>
+              <p class="card-text">With healthy ingredients</p>
+              <p class="price">80</p>
+            </div>
+            <div class="col-lg-3">
+              <button type="button" class="btn btn-order" data-toggle="modal" id="c5">
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card w-50 col">
+          <div class="card-body row">
+            <div class="col-3"> <img class="img-fluid"
+                src="https://therealfooddietitians.com/wp-content/uploads/2016/12/IMG_2286-e1481500032429-500x500.jpg">
+            </div>
+            <div class="col-6">
+              <h5 class="card-title">Coffee</h5>
+              <p class="card-text">With healthy ingredients</p>
+              <p class="price"> 30</p>
+            </div>
+            <div class="col-lg-3">
+              <button type="button" class="btn btn-order" data-toggle="modal" id="c6">
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end of menu section -->
+  <!-- form -->
+  <section id="fsection">
+    <div class="heading">
+      <h1>Book a Table</h1>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <form id="form">
+          <div class="form-row ">
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault01" class="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="First name" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationDefault03">Phone</label>
+              <input type="text" class="form-control" id="phone" placeholder="phone" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Persons</label>
+              <select class="custom-select my-1 mr-sm-2" id="persons">
+                
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Table No</label>
+              <select class="custom-select my-1 mr-sm-2" id="tableno">
+                
+                <option value="T1">Table No-1</option>
+                <option value="T2">Table No-2</option>
+                <option value="T3">Table No-3</option>
+                <option value="T4">Table No-4</option>
+                <option value="T5">Table No-5</option>
+                <option value="T6">Table No-6</option>
+                <option value="T7">Table No-7</option>
+                <option value="T8">Table No-8</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row ">
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault01" class="date">Date</label>
+              <input type="date" class="form-control" id="date" placeholder="date" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="appt">Time</label>
+              <input type="time" class="form-control" id="time" placeholder="time">
+            </div>
+          </div>
+          <button class="btton"  onclick="saveData()"id="btton" type="submit">Book Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <div class="col-sm-12" id="info" hidden>
+    <h2 style="text-align: center;">Booking Details</h2>
+    <div class="row">
+      <div class="col-sm-2" style="padding: 10px;background-color: grey;">
+        <h2>Name</h2>
+      </div>
+      <div class="col-sm-2" style="padding: 10px;background-color: grey;">
+        <h2>Email</h2>
+      </div>
+      <div class="col-sm-2" style="padding: 10px;background-color: grey;">
+        <h2>Phone</h2>
+      </div>
+      <div class="col-sm-2" style="padding: 10px;background-color: grey;">
+        <h2>Persons</h2>
+      </div>
+      <div class="col-sm-2" style="padding: 10px;background-color: grey;">
+        <h2>Date</h2>
+      </div>
+      <div class="col-sm-2" style="padding: 10px;background-color: grey;">
+        <h2>Time</h2>
+      </div>
+
+    </div>
+    <div id="showUsers"></div>
+  </div>
+  <footer>
+    <p>&copy; Copy right Cafe@96</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+
+ 
+
+  <!-- --------------------------------------------DATABASE----------------------------------------------------------- -->
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+    import { getDatabase, ref, set, push, get ,onValue} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCAjn1QB0_3Hg7Vk0xtfbIERuO72SHz_MM",
+      authDomain: "coffeeshop-fcad0.firebaseapp.com",
+      databaseURL: "https://coffeeshop-fcad0-default-rtdb.firebaseio.com",
+      projectId: "coffeeshop-fcad0",
+      storageBucket: "coffeeshop-fcad0.appspot.com",
+      messagingSenderId: "707842301433",
+      appId: "1:707842301433:web:7670b1e67c63805d86b128"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+
+    
+    document.getElementById('form').addEventListener('submit', submitForm);
+    function submitForm(e) {
+      e.preventDefault();
+      var name = getElementVal("name");
+      var email = getElementVal("email");
+      var phone = getElementVal("phone");
+      var persons = getElementVal("persons");
+      var tableno = getElementVal("tableno");
+      var date = getElementVal("date");
+      var time = getElementVal("time");
+
+      bookingDetails(name, email, phone, persons,tableno, date, time)
+      document.getElementById('form').reset();//to reset the form
+      alert("Your Table Is Booked Successfully!!")
+
+    }
+
+    function bookingDetails(name, email, phone, persons,tableno, date, time) {
+
+      const userData = ref(database, '/CustomerDetails');
+      const newuserData = push(userData);
+      set(newuserData, {
+        name: name,
+        email: email,
+        phone: phone,
+        persons: persons,
+        tableno:tableno,
+        date: date,
+        time: time
+      });
+
+      }
+
+      const getElementVal = (id) => {
+      return document.getElementById(id).value;
+    }
+
+    document.getElementById("msection").addEventListener('click',(e)=>{
+      e.preventDefault();
+      var prname=e.target.parentNode.previousElementSibling.children[0].innerText;
+      var prtext=e.target.parentNode.previousElementSibling.children[1].innerText;
+      var prprice=e.target.parentNode.previousElementSibling.children[2].innerText;
+     const timestamp=new Date().getTime();
+      const userData = ref(database, '/Order');
+      const newuserData = push(userData);
+      set(newuserData, {
+        ProductName:prname,
+        ProductInfo:prtext,
+        ProductPrice:prprice,
+      });
+    })
+    
     
 
-    <script src="script.js"></script>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </script>
 </body>
+
 </html>
